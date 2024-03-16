@@ -23,7 +23,7 @@ jobs:
       - name: Set secret.yml file
         run: |
           touch ./src/main/resources/secret.yml
-          echo "${{ secrets.SECRETYML }}" > ./src/main/resources/secret.yml
+          echo "${{ secrets.SECRET_YML }}" > ./src/main/resources/secret.yml
           cat ./src/main/resources/secret.yml
 
       - name: Grant execute permission for gradlew
