@@ -22,9 +22,9 @@ jobs:
 
       - name: Set secret.yml file
         run: |
-          touch ./src/main/resources/secret.yml
-          echo "${{ secrets.SECRET_YML }}" > ./src/main/resources/secret.yml
-          cat ./src/main/resources/secret.yml
+          echo "$SECRET_YML_CONTENT" > ./src/main/resources/secret.yml
+        env:
+          SECRET_YML_CONTENT: ${{ secrets.SECRET_YML }}
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
