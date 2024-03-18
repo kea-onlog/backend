@@ -26,8 +26,8 @@ repositories {
 
 sonar {
     properties {
-        property "sonar.projectKey", "onlog"
-        property "sonar.projectName", "onlog"
+        property "sonar.projectKey", "kea-onlog_backend_AY5KtMCebp14XTA4pfeL"
+        property "sonar.projectName", "backend"
     }
 }
 
