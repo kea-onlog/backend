@@ -26,6 +26,12 @@ jobs:
         env:
           SECRET_YML_CONTENT: ${{ secrets.SECRET_YML }}
 
+      - name: Set cloud-storage-credential-key.json file
+        run: |
+          echo "$GCP_STORAGE_CREDENTIALS" > ./src/main/resources/cloud-storage-credential-key.json
+        env:
+          GCP_STORAGE_CREDENTIALS: ${{ secrets.GCP_CLOUD_STORAGE_JSON_KEY }}
+
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
         shell: bash
