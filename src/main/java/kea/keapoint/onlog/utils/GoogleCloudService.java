@@ -35,7 +35,7 @@ public class GoogleCloudService {
         log.debug("Google Cloud Service를 이용한 번역을 수행합니다.");
 
         try {
-            // 번역 서비스 설정
+            // Google Cloud Translation 서비스 설정 초기화
             Translate translate = TranslateOptions.newBuilder()
                     .setCredentials(
                             GoogleCredentials.fromStream(ResourceUtils.getURL(translationCredentialsLocation).openStream())
@@ -43,14 +43,14 @@ public class GoogleCloudService {
                     .build()
                     .getService();
 
-            // 번역
+            // 텍스트 번역
             Translation translation = translate.translate(
                     text,
                     Translate.TranslateOption.sourceLanguage(sourceLanguage),
                     Translate.TranslateOption.targetLanguage(targetLanguage)
             );
 
-            // 번역 결과 반환
+            // 번역된 텍스트가 담긴 응답 객체 생성 및 반환
             return TranslationResponseDto.builder()
                     .originalText(text)
                     .translatedText(translation.getTranslatedText())
@@ -75,7 +75,7 @@ public class GoogleCloudService {
             String randomUUID = java.util.UUID.randomUUID().toString(); // 파일명 중복 방지를 위한 UUID
             String fileName = filePath + '/' + randomUUID + '_' + originalFileName; // bucket에 저장될 파일명
 
-            // GCP Cloud Storage에 파일 업로드
+            // Google Cloud Storage 서비스 설정 초기화
             Storage storage = StorageOptions.newBuilder()
                     .setCredentials(
                             GoogleCredentials.fromStream(ResourceUtils.getURL(cloudStorageCredentialsLocation).openStream())
@@ -83,13 +83,15 @@ public class GoogleCloudService {
                     .build()
                     .getService();
 
+            // 업로드할 파일에 대한 메타데이터 설정
             BlobInfo blobInfo = BlobInfo.newBuilder(cloudStorageBucketName, fileName)
                     .setContentType(contentType)
                     .build();
 
+            // GCP Cloud Storage에 파일 업로드
             storage.create(blobInfo, file.getBytes());
 
-            // 업로드된 파일 경로 반환
+            // 업로드된 파일에 대한 응답 객체 생성 및 반환
             return FileUploadResponseDto.builder()
                     .fileName(fileName)
                     .fileDownloadUri("https://storage.googleapis.com/" + cloudStorageBucketName + "/" + fileName)
