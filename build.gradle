@@ -56,6 +56,10 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+    // GCP (Cloud Storage)
+    implementation platform('com.google.cloud:libraries-bom:26.34.0')
+    implementation 'com.google.cloud:google-cloud-storage'
+
     // Database
     runtimeOnly 'com.mysql:mysql-connector-j'
 }
