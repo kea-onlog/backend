@@ -19,10 +19,10 @@ import java.time.LocalDateTime;
 public class GoogleCloudService {
 
     @Value("${gcp.storage.credentials.location}")
-    private String credentialsLocation;
+    private String cloudStorageCredentialsLocation;
 
     @Value("${gcp.storage.bucket-name}")
-    private String bucketName;
+    private String cloudStorageBucketName;
 
     public FileUploadResponseDto uploadFile(String filePath, MultipartFile file) throws IOException {
         log.debug("Google Cloud Service에 파일을 업로드합니다.");
@@ -38,12 +38,12 @@ public class GoogleCloudService {
             // GCP Cloud Storage에 파일 업로드
             Storage storage = StorageOptions.newBuilder()
                     .setCredentials(
-                            GoogleCredentials.fromStream(ResourceUtils.getURL(credentialsLocation).openStream())
+                            GoogleCredentials.fromStream(ResourceUtils.getURL(cloudStorageCredentialsLocation).openStream())
                     )
                     .build()
                     .getService();
 
-            BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, fileName)
+            BlobInfo blobInfo = BlobInfo.newBuilder(cloudStorageBucketName, fileName)
                     .setContentType(contentType)
                     .build();
 
@@ -52,7 +52,7 @@ public class GoogleCloudService {
             // 업로드된 파일 경로 반환
             return FileUploadResponseDto.builder()
                     .fileName(fileName)
-                    .fileDownloadUri("https://storage.googleapis.com/" + bucketName + "/" + fileName)
+                    .fileDownloadUri("https://storage.googleapis.com/" + cloudStorageBucketName + "/" + fileName)
                     .fileType(contentType)
                     .size(fileSize)
                     .uploadTime(LocalDateTime.now())
