@@ -35,6 +35,12 @@ jobs:
         env:
           GCP_STORAGE_CREDENTIALS: ${{ secrets.GCP_CLOUD_STORAGE_JSON_KEY }}
 
+      - name: Set translation-credential-key.json file
+        run: |
+          echo "$TRANSLATION_CREDENTIALS" > ./src/main/resources/translation-credential-key.json
+        env:
+          TRANSLATION_CREDENTIALS: ${{ secrets.GCP_TRANSLATION_JSON_KEY }}
+
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
         shell: bash
