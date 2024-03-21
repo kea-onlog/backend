@@ -240,3 +240,4 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/intellij,windows,macos,java
 
 secret.yml
+cloud-storage-credential-key.json
