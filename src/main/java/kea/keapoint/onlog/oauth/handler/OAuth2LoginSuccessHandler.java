@@ -44,6 +44,7 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
                 accessTokenCookie.setHttpOnly(true);
                 accessTokenCookie.setMaxAge(60 * 5); // 5분
                 accessTokenCookie.setPath("/");
+                accessTokenCookie.setSecure(true);
 
                 // 쿠키를 응답에 추가한다.
                 response.addCookie(accessTokenCookie);
@@ -63,11 +64,13 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
                 accessTokenCookie.setHttpOnly(true);
                 accessTokenCookie.setMaxAge(60 * 5); // 5분
                 accessTokenCookie.setPath("/");
+                accessTokenCookie.setSecure(true);
 
                 Cookie refreshTokenCookie = new Cookie("refreshToken", tokens.getRefreshToken());
                 refreshTokenCookie.setHttpOnly(true);
                 refreshTokenCookie.setMaxAge(60 * 5); // 5분
                 refreshTokenCookie.setPath("/");
+                refreshTokenCookie.setSecure(true);
 
                 // 쿠키를 응답에 추가한다.
                 response.addCookie(accessTokenCookie);
