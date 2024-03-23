@@ -18,6 +18,6 @@ public class OAuth2LoginFailureHandler implements AuthenticationFailureHandler {
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         response.getWriter().write("소셜 로그인에 실패했습니다. 서버 개발자에게 문의하세요.");
-        exception.printStackTrace();
+        log.warn("OAuth2 로그인에 실패했습니다. {}", exception.getMessage());
     }
 }
