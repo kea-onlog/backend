@@ -15,7 +15,7 @@ import java.util.UUID;
 public class User extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @Column(nullable = false)
@@ -45,4 +45,7 @@ public class User extends BaseEntity {
         return this;
     }
 
+    public void authorize() {
+        this.role = Role.USER;
+    }
 }
