@@ -39,7 +39,9 @@ public class JwtTokenProvider {
     public TokenDto createTokens(Authentication authentication, UUID userIdx) {
         // 사용자의 역할을 가져와서 Role 객체로 변환한다.
         Role roles = authentication.getAuthorities().stream()
-                .map(authority -> Role.valueOf(authority.getAuthority().toUpperCase()))
+                .map(authority ->
+                        Role.valueOf(authority.getAuthority().replace("ROLE_", "").toUpperCase())
+                )
                 .toList()
                 .get(0);
 
