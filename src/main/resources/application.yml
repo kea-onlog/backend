@@ -11,3 +11,7 @@ server:
     session:
       cookie:
         secure: true
+
+logging:
+  level:
+    kea.keapoint.onlog.feign.*: DEBUG
