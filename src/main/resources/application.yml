@@ -5,3 +5,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+
+server:
+  servlet:
+    session:
+      cookie:
+        secure: true
