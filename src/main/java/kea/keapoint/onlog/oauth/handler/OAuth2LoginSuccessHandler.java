@@ -11,6 +11,7 @@ import kea.keapoint.onlog.oauth.CustomOAuth2User;
 import kea.keapoint.onlog.repository.UserRepository;
 import kea.keapoint.onlog.utils.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
@@ -81,6 +83,7 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
             }
 
         } catch (Exception e) {
+            log.error(e.getMessage());
             throw e;
         }
 
