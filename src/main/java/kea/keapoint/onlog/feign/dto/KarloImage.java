@@ -25,7 +25,7 @@ public class KarloImage {
     /**
      * 이미지 생성 시 사용된 시드 값. 재요청을 통해 같은 콘텐츠의 이미지를 다시 생성하는 데 사용
      */
-    private Integer seed;
+    private Long seed;
 
     /**
      * 이미지 파일 (return_type 파라미터 값에 따라 Base64 인코딩한 값, 또는 이미지 파일 URL)
