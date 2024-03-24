@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClovaOptionObject {
+public class Option {
 
     /**
      * 문서의 언어

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class KarloFaceRefiner {
+public class FaceRefiner {
 
     /**
      * 얼굴 형태 조정 기능을 적용할 전체 이미지 대비 얼굴 영역의 비율, 실제 얼굴 영역이 설정 크기 이하인 경우만 기능 적용

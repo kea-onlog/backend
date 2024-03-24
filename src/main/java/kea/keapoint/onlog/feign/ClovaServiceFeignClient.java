@@ -1,8 +1,8 @@
 package kea.keapoint.onlog.feign;
 
 import kea.keapoint.onlog.config.feign.ClovaServiceFeignConfiguration;
-import kea.keapoint.onlog.feign.dto.clova.ClovaSummaryRequestDto;
-import kea.keapoint.onlog.feign.dto.clova.ClovaSummaryResponseDto;
+import kea.keapoint.onlog.feign.dto.clova.SummaryRequestDto;
+import kea.keapoint.onlog.feign.dto.clova.SummaryResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +22,6 @@ public interface ClovaServiceFeignClient {
      * @return Clova Summary API 응답 DTO
      */
     @PostMapping("/text-summary/v1/summarize")
-    ResponseEntity<ClovaSummaryResponseDto> summarize(ClovaSummaryRequestDto dto);
+    ResponseEntity<SummaryResponseDto> summarize(SummaryRequestDto dto);
 
 }

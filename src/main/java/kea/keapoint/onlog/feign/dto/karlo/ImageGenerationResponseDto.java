@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class KarloImageGenerationResponseDto {
+public class ImageGenerationResponseDto {
 
     /**
      * 요청 처리 작업 ID
@@ -29,6 +29,6 @@ public class KarloImageGenerationResponseDto {
     /**
      * 생성된 이미지 정보를 담은 배열
      */
-    private KarloImage[] images;
+    private Image[] images;
 
 }

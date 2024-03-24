@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class KarloImageGenerationRequestDto {
+public class ImageGenerationRequestDto {
 
     /**
      * 요청에 적용할 칼로 모델 버전
@@ -122,9 +122,9 @@ public class KarloImageGenerationRequestDto {
      * 얼굴 형태 조정 기능 설정 파라미터
      */
     @JsonProperty("face_refiner")
-    private KarloFaceRefiner faceRefiner = null;
+    private FaceRefiner faceRefiner = null;
 
-    public KarloImageGenerationRequestDto(String prompt) {
+    public ImageGenerationRequestDto(String prompt) {
         this.prompt = prompt;
     }
 }

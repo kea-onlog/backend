@@ -1,8 +1,8 @@
 package kea.keapoint.onlog.feign;
 
 import kea.keapoint.onlog.config.feign.KarloServiceFeignConfiguration;
-import kea.keapoint.onlog.feign.dto.karlo.KarloImageGenerationRequestDto;
-import kea.keapoint.onlog.feign.dto.karlo.KarloImageGenerationResponseDto;
+import kea.keapoint.onlog.feign.dto.karlo.ImageGenerationRequestDto;
+import kea.keapoint.onlog.feign.dto.karlo.ImageGenerationResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,5 +17,5 @@ public interface KarloServiceFeignClient {
      * @return Karlo Image Generation API 응답 DTO
      */
     @PostMapping(value = "/t2i")
-    ResponseEntity<KarloImageGenerationResponseDto> createImage(KarloImageGenerationRequestDto dto);
+    ResponseEntity<ImageGenerationResponseDto> createImage(ImageGenerationRequestDto dto);
 }

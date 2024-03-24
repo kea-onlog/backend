@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClovaSummaryResponseDto {
+public class SummaryResponseDto {
     private String summary;
 }

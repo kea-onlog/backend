@@ -3,7 +3,7 @@ package kea.keapoint.onlog.utils;
 import feign.FeignException;
 import kea.keapoint.onlog.exception.ClovaApiException;
 import kea.keapoint.onlog.feign.ClovaServiceFeignClient;
-import kea.keapoint.onlog.feign.dto.clova.ClovaSummaryRequestDto;
+import kea.keapoint.onlog.feign.dto.clova.SummaryRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class ClovaService {
 
     public String summarize(String text) {
         try {
-            return clovaServiceFeignClient.summarize(new ClovaSummaryRequestDto(text))
+            return clovaServiceFeignClient.summarize(new SummaryRequestDto(text))
                     .getBody()
                     .getSummary();
 

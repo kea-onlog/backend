@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClovaDocumentObject {
+public class Document {
 
     /**
      * 제목
@@ -26,7 +26,7 @@ public class ClovaDocumentObject {
      */
     private String content;
 
-    public ClovaDocumentObject(String text) {
+    public Document(String text) {
         this.title = null;
         this.content = text;
     }

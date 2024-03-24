@@ -3,8 +3,8 @@ package kea.keapoint.onlog.utils;
 import feign.FeignException;
 import kea.keapoint.onlog.exception.KarloApiException;
 import kea.keapoint.onlog.feign.KarloServiceFeignClient;
-import kea.keapoint.onlog.feign.dto.karlo.KarloImage;
-import kea.keapoint.onlog.feign.dto.karlo.KarloImageGenerationRequestDto;
+import kea.keapoint.onlog.feign.dto.karlo.Image;
+import kea.keapoint.onlog.feign.dto.karlo.ImageGenerationRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,11 +22,11 @@ public class KarloService {
     public List<String> createImage(String englishText) {
         try {
             return Arrays.stream(
-                            karloServiceFeignClient.createImage(new KarloImageGenerationRequestDto(englishText))
+                            karloServiceFeignClient.createImage(new ImageGenerationRequestDto(englishText))
                                     .getBody()
                                     .getImages()
                     )
-                    .map(KarloImage::getImage)
+                    .map(Image::getFile)
                     .toList();
 
         } catch (FeignException e) {
