@@ -1,4 +1,4 @@
-package kea.keapoint.onlog.feign.dto;
+package kea.keapoint.onlog.feign.dto.clova;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

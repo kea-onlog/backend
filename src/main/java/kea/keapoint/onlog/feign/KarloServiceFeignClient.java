@@ -1,8 +1,8 @@
 package kea.keapoint.onlog.feign;
 
 import kea.keapoint.onlog.config.feign.KarloServiceFeignConfiguration;
-import kea.keapoint.onlog.feign.dto.KarloImageGenerationRequestDto;
-import kea.keapoint.onlog.feign.dto.KarloImageGenerationResponseDto;
+import kea.keapoint.onlog.feign.dto.karlo.KarloImageGenerationRequestDto;
+import kea.keapoint.onlog.feign.dto.karlo.KarloImageGenerationResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

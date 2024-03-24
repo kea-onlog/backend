@@ -1,8 +1,8 @@
 package kea.keapoint.onlog.feign;
 
 import kea.keapoint.onlog.config.feign.ClovaServiceFeignConfiguration;
-import kea.keapoint.onlog.feign.dto.ClovaSummaryRequestDto;
-import kea.keapoint.onlog.feign.dto.ClovaSummaryResponseDto;
+import kea.keapoint.onlog.feign.dto.clova.ClovaSummaryRequestDto;
+import kea.keapoint.onlog.feign.dto.clova.ClovaSummaryResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

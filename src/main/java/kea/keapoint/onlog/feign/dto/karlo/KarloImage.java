@@ -1,4 +1,4 @@
-package kea.keapoint.onlog.feign.dto;
+package kea.keapoint.onlog.feign.dto.karlo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
