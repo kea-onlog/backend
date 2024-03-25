@@ -4,6 +4,7 @@ import feign.RequestInterceptor;
 import org.apache.http.entity.ContentType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpHeaders;
 
 /**
  * Clova 서비스 Feign Client 설정 클래스
@@ -21,7 +22,7 @@ public class ClovaServiceFeignConfiguration {
         return requestTemplate -> {
             requestTemplate.header("X-NCP-APIGW-API-KEY-ID", clientId);
             requestTemplate.header("X-NCP-APIGW-API-KEY", clientSecret);
-            requestTemplate.header("Content-Type", ContentType.APPLICATION_JSON.toString());
+            requestTemplate.header(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_JSON.toString());
         };
     }
 }
