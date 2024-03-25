@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Karlo 서비스를 사용하는 기능을 제공하는 서비스 클래스
@@ -31,8 +32,10 @@ public class KarloService {
     public List<String> createImage(String englishText) {
         try {
             return Arrays.stream(
-                            karloServiceFeignClient.createImage(new ImageGenerationRequestDto(englishText))
-                                    .getBody()
+                            Objects.requireNonNull(
+                                            karloServiceFeignClient.createImage(new ImageGenerationRequestDto(englishText))
+                                                    .getBody()
+                                    )
                                     .getImages()
                     )
                     .map(Image::getFile)

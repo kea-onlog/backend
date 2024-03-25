@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 /**
  * Clova 서비스를 사용하는 기능을 제공하는 서비스 클래스
  */
@@ -26,8 +28,10 @@ public class ClovaService {
      */
     public String summarize(String text) {
         try {
-            return clovaServiceFeignClient.summarize(new SummaryRequestDto(text))
-                    .getBody()
+            return Objects.requireNonNull(
+                            clovaServiceFeignClient.summarize(new SummaryRequestDto(text))
+                                    .getBody()
+                    )
                     .getSummary();
 
         } catch (FeignException e) {
