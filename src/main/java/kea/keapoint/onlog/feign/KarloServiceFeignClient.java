@@ -7,6 +7,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 
+/**
+ * Karlo 서비스 Feign Client
+ *
+ * @see <a href="https://developers.kakao.com/docs/latest/ko/karlo/rest-api">Karlo API 명세서</a>
+ */
 @FeignClient(name = "karlo-service", url = "https://api.kakaobrain.com/v2/inference/karlo", configuration = KarloServiceFeignConfiguration.class)
 public interface KarloServiceFeignClient {
 

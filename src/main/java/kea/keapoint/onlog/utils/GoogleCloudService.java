@@ -18,19 +18,39 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+/**
+ * Google Cloud 서비스를 사용하는 기능을 제공하는 서비스 클래스
+ */
 @Slf4j
 @Service
 public class GoogleCloudService {
 
+    /**
+     * Google Cloud Translation 서비스 계정 정보 파일 경로
+     */
     @Value("${gcp.translation.credentials.location}")
     private String translationCredentialsLocation;
 
+    /**
+     * Google Cloud Storage 서비스 계정 정보 파일 경로
+     */
     @Value("${gcp.storage.credentials.location}")
     private String cloudStorageCredentialsLocation;
 
+    /**
+     * Google Cloud Storage 버킷 이름
+     */
     @Value("${gcp.storage.bucket-name}")
     private String cloudStorageBucketName;
 
+    /**
+     * 텍스트를 번역하는 메소드
+     *
+     * @param text           번역할 텍스트
+     * @param sourceLanguage 번역할 텍스트의 언어
+     * @param targetLanguage 번역될 언어
+     * @return 번역된 텍스트가 담긴 응답 객체
+     */
     public TranslationResponseDto translation(String text, String sourceLanguage, String targetLanguage) throws IOException {
         log.debug("Google Cloud Service를 이용한 번역을 수행합니다.");
 
@@ -64,6 +84,13 @@ public class GoogleCloudService {
         }
     }
 
+    /**
+     * 파일을 업로드하는 메소드
+     *
+     * @param filePath 파일이 저장될 경로
+     * @param file     업로드할 파일
+     * @return 업로드된 파일 정보가 담긴 응답 객체
+     */
     public FileUploadResponseDto uploadFile(String filePath, MultipartFile file) throws IOException {
         log.debug("Google Cloud Service에 파일을 업로드합니다.");
 

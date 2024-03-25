@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
 
+/**
+ * Karlo 서비스 Feign Client 설정 클래스
+ */
 public class KarloServiceFeignConfiguration {
 
     @Value("${karlo.client-id}")

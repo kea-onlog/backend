@@ -15,6 +15,9 @@ import java.util.Date;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+/**
+ * JWT 토큰 관련 기능을 제공하는 클래스
+ */
 @Component
 public class JwtTokenProvider {
 
@@ -30,7 +33,7 @@ public class JwtTokenProvider {
     private static final long REFRESH_TOKEN_EXPIRE_TIME = ONE_DAY * 5; // 5 days
 
     /**
-     * Authentication 객체와 사용자 ID를 입력받아, JWT 액세스 토큰과 리프레시 토큰을 생성한다.
+     * JWT 액세스 토큰과 리프레시 토큰을 생성하는 메소드
      *
      * @param authentication 인증 정보를 담고 있는 객체. 이 객체에는 사용자의 권한 정보 등이 포함되어 있다.
      * @param userIdx        사용자의 고유 ID.

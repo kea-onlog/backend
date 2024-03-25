@@ -20,7 +20,7 @@ public class OAuthAttributes {
     private String profileImageUrl; // 유저 프로필 이미지 URL
 
     /**
-     * 소셜 서비스에 따라 적절한 OAuthAttributes 객체를 생성한다.
+     * 소셜 서비스에 따라 적절한 OAuthAttributes 객체를 생성하는 메소드
      *
      * @param registrationId        OAuth2 로그인을 처리한 서비스 명
      * @param userNameAttributeName OAuth2 로그인 시 키 값
@@ -36,7 +36,7 @@ public class OAuthAttributes {
     }
 
     /**
-     * Google 소셜 로그인에서 반환된 유저 정보를 바탕으로 OAuthAttributes 객체를 생성한다.
+     * Google 소셜 로그인에서 반환된 유저 정보를 바탕으로 OAuthAttributes 객체를 생성하는 메소드
      *
      * @param userNameAttributeName OAuth2 로그인 시 키 값
      * @param attributes            유저 정보가 담긴 Map 객체
@@ -54,7 +54,7 @@ public class OAuthAttributes {
     }
 
     /**
-     * Kakao 소셜 로그인에서 반환된 유저 정보를 바탕으로 OAuthAttributes 객체를 생성한다.
+     * Kakao 소셜 로그인에서 반환된 유저 정보를 바탕으로 OAuthAttributes 객체를 생성하는 메소드
      *
      * @param userNameAttributeName OAuth2 로그인 시 키 값
      * @param attributes            유저 정보가 담긴 Map 객체
@@ -75,7 +75,7 @@ public class OAuthAttributes {
     }
 
     /**
-     * OAuthAttributes 객체를 바탕으로 애플리케이션 내 사용자 엔티티를 생성한다.
+     * OAuthAttributes 객체를 User 엔티티 객체로 변환하는 메소드
      *
      * @return User 사용자 엔티티 객체
      */

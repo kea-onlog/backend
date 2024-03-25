@@ -5,6 +5,9 @@ import org.apache.http.entity.ContentType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * Clova 서비스 Feign Client 설정 클래스
+ */
 public class ClovaServiceFeignConfiguration {
 
     @Value("${clova.client-id}")

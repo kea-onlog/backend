@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Karlo 서비스를 사용하는 기능을 제공하는 서비스 클래스
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -19,6 +22,12 @@ public class KarloService {
 
     private final KarloServiceFeignClient karloServiceFeignClient;
 
+    /**
+     * 주어진 영어 텍스트를 이미지로 변환하는 메소드
+     *
+     * @param englishText 이미지로 변환할 영어 텍스트
+     * @return 생성된 이미지 파일 경로 리스트
+     */
     public List<String> createImage(String englishText) {
         try {
             return Arrays.stream(

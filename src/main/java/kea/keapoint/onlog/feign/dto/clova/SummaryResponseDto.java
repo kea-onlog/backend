@@ -13,5 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SummaryResponseDto {
+
+    /**
+     * 요약된 문서
+     */
     private String summary;
 }

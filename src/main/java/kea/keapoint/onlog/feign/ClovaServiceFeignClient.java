@@ -8,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
- * Clova Summary API 요청을 위한 Feign Client
+ * Clova 서비스 Feign Client
  *
- * @see <a href="https://api.ncloud-docs.com/docs/ai-naver-clovasummary-api">Clova Summeary API 명세서</a>
+ * @see <a href="https://api.ncloud-docs.com/docs">Clova API 명세서</a>
  */
 @FeignClient(name = "clova-service", url = "https://naveropenapi.apigw.ntruss.com", configuration = ClovaServiceFeignConfiguration.class)
 public interface ClovaServiceFeignClient {

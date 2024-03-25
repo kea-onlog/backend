@@ -6,6 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 얼굴 형태 조정 기능을 설정하는 객체
+ *
+ * @see <a href="https://developers.kakao.com/docs/latest/ko/karlo/rest-api#text-to-image">Karlo 이미지 생성 API 명세서</a>
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
