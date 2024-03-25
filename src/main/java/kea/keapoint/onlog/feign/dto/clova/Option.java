@@ -1,4 +1,4 @@
-package kea.keapoint.onlog.feign.dto;
+package kea.keapoint.onlog.feign.dto.clova;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClovaOptionObject {
+public class Option {
 
     /**
      * 문서의 언어

@@ -1,4 +1,4 @@
-package kea.keapoint.onlog.feign.dto;
+package kea.keapoint.onlog.feign.dto.clova;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClovaSummaryResponseDto {
+public class SummaryResponseDto {
+
+    /**
+     * 요약된 문서
+     */
     private String summary;
 }

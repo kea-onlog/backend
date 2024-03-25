@@ -1,16 +1,16 @@
 package kea.keapoint.onlog.feign;
 
 import kea.keapoint.onlog.config.feign.ClovaServiceFeignConfiguration;
-import kea.keapoint.onlog.feign.dto.ClovaSummaryRequestDto;
-import kea.keapoint.onlog.feign.dto.ClovaSummaryResponseDto;
+import kea.keapoint.onlog.feign.dto.clova.SummaryRequestDto;
+import kea.keapoint.onlog.feign.dto.clova.SummaryResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
- * Clova Summary API 요청을 위한 Feign Client
+ * Clova 서비스 Feign Client
  *
- * @see <a href="https://api.ncloud-docs.com/docs/ai-naver-clovasummary-api">Clova Summeary API 명세서</a>
+ * @see <a href="https://api.ncloud-docs.com/docs">Clova API 명세서</a>
  */
 @FeignClient(name = "clova-service", url = "https://naveropenapi.apigw.ntruss.com", configuration = ClovaServiceFeignConfiguration.class)
 public interface ClovaServiceFeignClient {
@@ -22,6 +22,6 @@ public interface ClovaServiceFeignClient {
      * @return Clova Summary API 응답 DTO
      */
     @PostMapping("/text-summary/v1/summarize")
-    ResponseEntity<ClovaSummaryResponseDto> summarize(ClovaSummaryRequestDto dto);
+    ResponseEntity<SummaryResponseDto> summarize(SummaryRequestDto dto);
 
 }

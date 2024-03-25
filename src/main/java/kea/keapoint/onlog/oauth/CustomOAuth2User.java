@@ -11,9 +11,9 @@ import java.util.UUID;
 
 @Getter
 public class CustomOAuth2User extends DefaultOAuth2User {
-    private UUID userIdx;
-    private String email;
-    private Role role;
+    private UUID userIdx; // 사용자 식별자
+    private String email; // 사용자 이메일
+    private Role role; // 사용자 역할
 
     public CustomOAuth2User(Collection<? extends GrantedAuthority> authorities,
                             Map<String, Object> attributes, String nameAttributeKey,

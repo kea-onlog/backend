@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FileUploadResponseDto {
-    private String fileName;
-    private String fileDownloadUri;
-    private String fileType;
-    private long size;
-    private LocalDateTime uploadTime;
+    private String fileName; // 파일 이름
+    private String fileDownloadUri; // 파일 다운로드 URI
+    private String fileType; // 파일 타입
+    private long size; // 파일 크기
+    private LocalDateTime uploadTime; // 파일 업로드 시간
 }

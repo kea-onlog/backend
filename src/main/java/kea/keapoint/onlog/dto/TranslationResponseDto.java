@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TranslationResponseDto {
-    private String originalText;
-    private String translatedText;
-    private String sourceLanguage;
-    private String targetLanguage;
+    private String originalText; // 번역 전 텍스트
+    private String translatedText; // 번역 후 텍스트
+    private String sourceLanguage; // 번역 전 언어
+    private String targetLanguage; // 번역 후 언어
 }

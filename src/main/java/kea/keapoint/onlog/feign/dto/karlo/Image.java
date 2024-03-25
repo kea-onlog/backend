@@ -1,4 +1,4 @@
-package kea.keapoint.onlog.feign.dto;
+package kea.keapoint.onlog.feign.dto.karlo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class KarloImage {
+public class Image {
 
     /**
      * 이미지 ID
@@ -30,7 +30,8 @@ public class KarloImage {
     /**
      * 이미지 파일 (return_type 파라미터 값에 따라 Base64 인코딩한 값, 또는 이미지 파일 URL)
      */
-    private String image;
+    @JsonProperty("image")
+    private String file;
 
     /**
      * 이미지의 NSFW 콘텐츠 포함 여부

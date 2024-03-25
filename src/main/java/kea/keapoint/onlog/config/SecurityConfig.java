@@ -12,6 +12,9 @@ import org.springframework.security.config.annotation.web.configurers.HeadersCon
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Spring Security 설정 클래스
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
